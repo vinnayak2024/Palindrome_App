@@ -1,37 +1,27 @@
-public class PalindromeChecker {
-    public static class UseCase2{
-        public UseCase2(String s){
-            s=s.toLowerCase();
-            boolean isPlaindrome;
-            int start= 0;
-            int end = s.length() -1;
-            while(start<end){
-                if(s.charAt(start) != s.charAt(end)){
-                    isPlaindrome=false;
-                }
-                start++;
-                end--;
-            }
+import java.util.*;
 
-            isPlaindrome=true;
+public class  UseCAse3PalindromeCheckerApp{
 
-            if(isPlaindrome){
-                System.out.println("Is it a Palindrome:Yes");
+    public static void main(String[] args) {
+        boolean IsPalindrome = true;
+        String s = "level";
+        for(int i = s.length()-1;i>0;i--){
+            if(s.charAt(i)==s.charAt(s.length()-i-1)){
+                IsPalindrome=true;
+
             }
             else{
-                System.out.println("Is it a Palindrome:No");
+                IsPalindrome=false;
             }
 
         }
 
-
-    }
-    public static void main(String[] args){
-        String s = "madam";
-        System.out.println(("Input Text: madam"));
-        UseCase2 entry = new UseCase2(s);
-
-
+        if(IsPalindrome){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not palindrome");
+        }
 
     }
 }
