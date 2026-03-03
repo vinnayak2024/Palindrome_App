@@ -1,19 +1,19 @@
-import java.util.*;
-
-public class  UseCAse3PalindromeCheckerApp{
+public class UseCase4PalindromeCheckerApp {
 
     public static void main(String[] args) {
         boolean IsPalindrome = true;
-        String s = "level";
-        for(int i = s.length()-1;i>0;i--){
-            if(s.charAt(i)==s.charAt(s.length()-i-1)){
-                IsPalindrome=true;
+        String s = "bob";
+        char[] array = s.toCharArray();
+        int start =0;
+        int end = s.length()-1;
+
+        while(start<end){
+            if(array[start]!=array[end]){
+                IsPalindrome = false;
 
             }
-            else{
-                IsPalindrome=false;
-            }
-
+            start++;
+            end--;
         }
 
         if(IsPalindrome){
@@ -22,6 +22,5 @@ public class  UseCAse3PalindromeCheckerApp{
         else{
             System.out.println("Not palindrome");
         }
-
     }
 }
