@@ -1,20 +1,26 @@
-public class UseCase4PalindromeCheckerApp {
+import java.util.*;
+
+public class UseCase5PalindromeCheckerApp {
 
     public static void main(String[] args) {
         boolean IsPalindrome = true;
         String s = "bob";
-        char[] array = s.toCharArray();
-        int start =0;
-        int end = s.length()-1;
 
-        while(start<end){
-            if(array[start]!=array[end]){
-                IsPalindrome = false;
+        Stack <Character> stack = new Stack<>();
+        for(char ch: s.toCharArray()){
+            stack.push(ch);
+        }
+
+        for(char ch:s.toCharArray()){
+            if(!stack.isEmpty() && stack.peek() == ch){
+                if(ch!=stack.pop()){
+                    IsPalindrome = false;
+                }
+
 
             }
-            start++;
-            end--;
         }
+
 
         if(IsPalindrome){
             System.out.println("Palindrome");
